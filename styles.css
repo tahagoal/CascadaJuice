@@ -6952,7 +6952,7 @@ input[type=date]::-moz-clear { display: none; }
   }
 
   .hero_container {
-    padding-top: 30%;
+    padding-top: 50%;
   }
   .bg-dark {
     background-color: rgba(0,0,0,0.8) !important;
@@ -6960,6 +6960,10 @@ input[type=date]::-moz-clear { display: none; }
 
   .navbar-nav .nav-link {
     width: fit-content;
+  }
+
+  .background_hero {
+    height: 65vh;
   }
 
 }
