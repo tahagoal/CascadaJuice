@@ -2118,7 +2118,10 @@
     display: block; }
   
   .navbar {
-    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    position: absolute;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -5859,7 +5862,6 @@
       color: #fff; }
     .ftco-cover.overlay {
       position: relative; 
-        margin-top: -88px;
       }
     .ftco-cover .ftco-vh-100 {
       min-height: 700px !important; }
@@ -6773,6 +6775,7 @@ input[type=date]::-moz-clear { display: none; }
 
 .juc_img_cont{
   display: -webkit-box;
+  overflow: hidden;
 }
 
 .juc_img_cont h1{
@@ -6863,6 +6866,28 @@ input[type=date]::-moz-clear { display: none; }
   font-weight: 800;
 }
 
+@media(max-width: 920px) and (orientation: landscape) {
+    .juc_img_cont{
+      display: block;
+    }
+
+    #header2_2{
+      display: block;
+    }
+
+    #header2{
+      display: none;
+    }
+
+    .juc_img_cont #img1, .juc_img_cont #img2, .juc_img_cont #img3 {
+      margin-top: 50px;
+      margin-bottom: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      display: table;
+    }
+}
+
 @media (max-width: 768px){
   .offset-1, .offset-2, .offset-3, .offset-4, .offset-5, .offset-6{
     margin-left: 0px;
@@ -6900,7 +6925,6 @@ input[type=date]::-moz-clear { display: none; }
   }
 
   .ftco-cover.overlay {
-     margin-top: 0px; 
   }
 
   .media.block-6{
@@ -6929,6 +6953,13 @@ input[type=date]::-moz-clear { display: none; }
 
   .hero_container {
     padding-top: 30%;
-}
+  }
+  .bg-dark {
+    background-color: rgba(0,0,0,0.8) !important;
+  }
+
+  .navbar-nav .nav-link {
+    width: fit-content;
+  }
 
 }
