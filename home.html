@@ -11,7 +11,7 @@
 </head>
 
 <body id="body" class="no_scroll">
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark" id="ftco-navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light bg-dark" id="ftco-navbar">
         <div class="container">
             <a class="navbar-brand" href="home.html">
                 <span class="flaticon-gavel">
@@ -78,7 +78,7 @@
 						</p>
                     </div>
                     <div class="col-md-12">
-                        <button class="btn btn-2 btn-2g center" style="text-align: center;">More</button>
+                        <a class="btn btn-2 btn-2g center" href="menu.html" style="text-align: center;">More</a>
                     </div>
                 </div>
             </div>
@@ -86,7 +86,7 @@
     </section>
 
 
-    <div class="ftco-section icons_sec">
+    <div class="ftco-section-2 icons_sec">
         <div class="container" id="counter">
             <div class="row">
                 <div class="col-md-3 col-sm-6" data-aos="fade-up">
@@ -138,7 +138,7 @@
         </div>
     </div>
 
-    <div class="image_section">
+    <div class="image_section ftco-section-2">
         <div class="text" style="padding: 100px">
 	        <div class="row">
 	        	<div class="col-sm-6"></div>
@@ -155,7 +155,7 @@
     </div>
 
 
-    <div class="ftco-section juc_section">
+    <div class="ftco-section-2 juc_section">
         <div class="container">
             <div class="row">
             	<div class="col-sm-12 juc_img_cont">
@@ -177,7 +177,7 @@
         </div>
     </div>
 
-    <div class="ftco-section partners_section">
+    <div class="ftco-section-2 partners_section">
         <div class="container">
             <div class="row mb-4">
                 <div class="col-sm-12" style="text-align: center;">
@@ -293,6 +293,7 @@ $(document).ready(function ($) {
 	loader();
 
 	// scroll
+	var lastScrollTop = 0;
 	var scrollWindow = function () {
 		$(window).scroll(function () {
 			var $w = $(this),
@@ -300,8 +301,10 @@ $(document).ready(function ($) {
 				navbar = $('.ftco_navbar'),
 				sd = $('.js-scroll-wrap');
 
-			if (st > 150) {
-				if (!navbar.hasClass('scrolled')) {
+			if (st > lastScrollTop){
+			       // downscroll code
+			   } else {
+	   			if (!navbar.hasClass('scrolled')) {
 					navbar.addClass('scrolled');
 				}
 
@@ -312,22 +315,37 @@ $(document).ready(function ($) {
 				if (sd.length > 0) {
 					sd.addClass('sleep');
 				}
+			      // upscroll code
+			   }
 
-			}
-			if (st < 150) {
-				if (navbar.hasClass('scrolled')) {
-					navbar.removeClass('scrolled sleep');
-				}
+			// if (st > 150) {
+			// 	if (!navbar.hasClass('scrolled')) {
+			// 		navbar.addClass('scrolled');
+			// 	}
 
-				if (navbar.hasClass('awake')) {
-					navbar.removeClass('awake');
-					navbar.addClass('sleep');
-				}
-				if (sd.length > 0) {
-					sd.removeClass('sleep');
-				}
-			}
+			// 	if (!navbar.hasClass('awake')) {
+			// 		navbar.addClass('awake');
+			// 	}
 
+			// 	if (sd.length > 0) {
+			// 		sd.addClass('sleep');
+			// 	}
+
+			// }
+			// if (st < 150) {
+			// 	if (navbar.hasClass('scrolled')) {
+			// 		navbar.removeClass('scrolled sleep');
+			// 	}
+
+			// 	if (navbar.hasClass('awake')) {
+			// 		navbar.removeClass('awake');
+			// 		navbar.addClass('sleep');
+			// 	}
+			// 	if (sd.length > 0) {
+			// 		sd.removeClass('sleep');
+			// 	}
+			// }
+			lastScrollTop = st;
 		});
 	};
 	scrollWindow();

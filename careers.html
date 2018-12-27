@@ -11,7 +11,7 @@
 </head>
 
 <body id="body" class="no_scroll">
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark" id="ftco-navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light bg-dark" id="ftco-navbar">
         <div class="container">
             <a class="navbar-brand" href="home.html">
                 <span class="flaticon-gavel">
@@ -95,8 +95,8 @@
         </div>
     </section>
 
-    <div class="image_section_careers">
-        <div class="text" style="padding: 100px">
+    <div class="image_section_careers ftco-section-2">
+        <div class="text">
 	        <div class="row">
 		        <div class="col-sm-6 offset-1">
 		    		<h2 class="new_spacing center" style="color:white; font-weight: 300;">Want to jump on the healthy board<br>whatever the position<br>Share us your CV & cover letter via <br> <a class="send_cv_via" href="">hr@cascada.com</a></h2>
@@ -171,6 +171,7 @@ $(document).ready(function ($) {
 	loader();
 
 	// scroll
+		var lastScrollTop = 0;
 	var scrollWindow = function () {
 		$(window).scroll(function () {
 			var $w = $(this),
@@ -178,8 +179,10 @@ $(document).ready(function ($) {
 				navbar = $('.ftco_navbar'),
 				sd = $('.js-scroll-wrap');
 
-			if (st > 150) {
-				if (!navbar.hasClass('scrolled')) {
+			if (st > lastScrollTop){
+			       // downscroll code
+			   } else {
+	   			if (!navbar.hasClass('scrolled')) {
 					navbar.addClass('scrolled');
 				}
 
@@ -190,22 +193,37 @@ $(document).ready(function ($) {
 				if (sd.length > 0) {
 					sd.addClass('sleep');
 				}
+			      // upscroll code
+			   }
 
-			}
-			if (st < 150) {
-				if (navbar.hasClass('scrolled')) {
-					navbar.removeClass('scrolled sleep');
-				}
+			// if (st > 150) {
+			// 	if (!navbar.hasClass('scrolled')) {
+			// 		navbar.addClass('scrolled');
+			// 	}
 
-				if (navbar.hasClass('awake')) {
-					navbar.removeClass('awake');
-					navbar.addClass('sleep');
-				}
-				if (sd.length > 0) {
-					sd.removeClass('sleep');
-				}
-			}
+			// 	if (!navbar.hasClass('awake')) {
+			// 		navbar.addClass('awake');
+			// 	}
 
+			// 	if (sd.length > 0) {
+			// 		sd.addClass('sleep');
+			// 	}
+
+			// }
+			// if (st < 150) {
+			// 	if (navbar.hasClass('scrolled')) {
+			// 		navbar.removeClass('scrolled sleep');
+			// 	}
+
+			// 	if (navbar.hasClass('awake')) {
+			// 		navbar.removeClass('awake');
+			// 		navbar.addClass('sleep');
+			// 	}
+			// 	if (sd.length > 0) {
+			// 		sd.removeClass('sleep');
+			// 	}
+			// }
+			lastScrollTop = st;
 		});
 	};
 	scrollWindow();
