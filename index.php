@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cascada Juice</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php bloginfo('template_url'); ?>/favicon.ico" type="image/x-icon">
 </head>
 
 <body id="body" class="no_scroll">
@@ -17,7 +17,8 @@
         <div class="container">
             <a class="navbar-brand" href="home.html">
                 <span class="flaticon-gavel">
-                    <img src="cas_log.png" alt="logo"> </span>
+                    <img src="<?php bloginfo('template_url'); ?>/cas_log.png" alt="logo"> 
+                </span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -30,19 +31,19 @@
                         <a href="home.html" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="about.html" class="nav-link">About</a>
+                        <a href="/about" class="nav-link">About</a>
                     </li>
                     <li class="nav-item">
-                        <a href="visit.html" class="nav-link">Visit us</a>
+                        <a href="/visit" class="nav-link">Visit us</a>
                     </li>
                     <li class="nav-item">
-                        <a href="menu.html" class="nav-link">Menu</a>
+                        <a href="/menu" class="nav-link">Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a href="careers.html" class="nav-link">Careers</a>
+                        <a href="/careers" class="nav-link">Careers</a>
                     </li>
                     <li class="nav-item">
-                        <a href="contact.html" class="nav-link">Contact us</a>
+                        <a href="/contact" class="nav-link">Contact us</a>
                     </li>
                 </ul>
             </div>
@@ -67,17 +68,15 @@
     <section class="ftco-section-2 why_us">
         <div class="container-fluid">
             <div class="section-2-blocks-wrapper row no-gutters">
-                <div class="text col-sm-6 offset-3">
+                <div class="text col-md-6 offset-3">
                     <h2 class="why_title center mb-3">
                         Why us
                     </h2>
                     <div class="text-inner center align-self-start" data-aos="fade-up">
                         <!-- <h3>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h3> -->
-                        <p style="text-align: center;" class="why_par">With the fast paced noisy world of fast food, over-priced classy restaurants, smoking cafes, coffee corners, and the overall unhealthy crowded lifestyle, we can clearly see an intimate need for a unique experience for those who are health-conscious or even those interested in a classy yet affordable experience.
-                        <br>
-                        <br>
-						CASCADA is a juice & platter bar with comfortable and relaxing seating that welcomes you in any time of the day.
-						</p>
+                        <div style="text-align: center;" class="why_par">
+                            <?php echo the_field("page_description") ?>
+						</div>
                     </div>
                     <div class="col-md-12">
                         <a class="btn btn-2 btn-2g center" href="menu.html" style="text-align: center;">More</a>
@@ -94,7 +93,7 @@
                 <div class="col-md-3 col-sm-6" data-aos="fade-up">
                     <div class="media block-6 d-block text-center">
                         <div class="icon mb-4">
-                        	<img src="fruit1.png">
+                        	<img  src= "<?php bloginfo('template_url'); ?>/fruit1.png">
                         </div>
                         <div class="media-body">
                             <h3 class="heading">
@@ -106,7 +105,7 @@
                 <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="media block-6 d-block text-center">
                         <div class="icon mb-4">
-                        	<img src="vegetables.png">
+                        	<img src="<?php bloginfo('template_url'); ?>/vegetables.png">
                         </div>
                         <div class="media-body">
                             <h3 class="heading count">Organic</h3>
@@ -116,7 +115,7 @@
                 <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="media block-6 d-block text-center">
                         <div class="icon mb-4">
-                        	<img src="salad.png">
+                        	<img src="<?php bloginfo('template_url'); ?>/salad.png">
                         </div>
                         <div class="media-body">
                             <h3 class="heading count">Healthy</h3>
@@ -126,7 +125,7 @@
                 <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="media block-6 d-block text-center">
                         <div class="icon mb-4">
-                        	<img src="harmo.png">
+                        	<img src="<?php bloginfo('template_url'); ?>/harmo.png">
                         </div>
                         <div class="media-body">
                             <h3 class="heading">
@@ -147,10 +146,9 @@
 		        <div class="col-sm-6">
 		    		<h2 class="new_spacing center" style="color:white; font-weight: 300;">OUR CULTURE</h2>
 		    		<br>
-		            <p data-aos="fade-up" style="color:white;"><strong>Health, health, and HEALTH!</strong><br>
-							Our wide range of juice and snack choices never include any sort of chemicals, hormone infusion, or other genetically modified products. Instead, we use tasty, organic, natural ingredients, and such as: detox, energy boosters, probiotics, gluten-free, lactose free, and many signature ingredients that would delight you anytime of the day.
-							Why? Because we keep your health in all of our jars! 
-					</p>
+		            <div data-aos="fade-up" style="color:white;">
+                            <?php echo the_field("culture") ?>
+					</div>
 		        </div>
 	        </div>
         </div>
@@ -162,17 +160,17 @@
             <div class="row">
             	<div class="col-sm-12 juc_img_cont">
             		<div data-aos="fade-right">
-            			<img id="img1" src="mefa.png">
+            			<img id="img1"  src="<?php bloginfo('template_url'); ?>/mefa.png">
             			<h1 id="header1" class="center">Health dessert</h1>
             		</div>
             		<div data-aos="fade-up">
             			<h1 id="header2" class="center">Juice</h1>
-            			<img id="img2" src="juc.png">
+            			<img id="img2" src="<?php bloginfo('template_url'); ?>/juc.png">
             			<h1 id="header2_2" class="center">Juice</h1>
             		</div>
             		<div data-aos="fade-left">
-            			<img id="img3" src="sand.png">
-            			<h1 id="header3" class="center">Sandwitch & Platters</h1>
+            			<img id="img3" src="<?php bloginfo('template_url'); ?>/sand.png">
+            			<h1 id="header3" class="center">Sandwich & Platters</h1>
             		</div>
             	</div>
             </div>
@@ -190,41 +188,28 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-3" style="text-align: center;" data-aos="fade-up">
+            <?php 
+                $counter = 0;
+                while( have_rows('menu') ): the_row(); 
+                // vars
+                $image = get_sub_field('image');
+                $title = get_sub_field('title');
+                $text = get_sub_field('text');
+                $price = get_sub_field('price');
+            ?>
+                <div class="col-md-3" style="text-align: center;" data-aos="fade-up">
                     <div class="plate_card">
-                    	<img class="plate_img" src="plat.png">
-                    	<h3>Healthy</h3>
-                    	<p class="plat_par">Lorem Ipsum is is simply dummy text of the printing</p>
-                    	<h3 class="plat_pric"><span>50</span> L.E</h3>
+                    	<img class="plate_img" src="<?php echo $image['url']; ?>">
+                    	<h3><?php echo $title ?></h3>
+                    	<p class="plat_par"><?php echo $text ?></p>
+                    	<h3 class="plat_pric"><span><?php echo $price ?></span> L.E</h3>
                     </div>
                 </div>
+            <?php
+                $counter ++; 
+                endwhile; 
+            ?>
 
-                <div class="col-sm-3" style="text-align: center;" data-aos="fade-up" data-aos-delay="50">
-                    <div class="plate_card">
-                    	<img class="plate_img" src="plat.png">
-                    	<h3>Healthy</h3>
-                    	<p class="plat_par">Lorem Ipsum is is simply dummy text of the printing</p>
-                    	<h3 class="plat_pric"><span>50</span> L.E</h3>
-                    </div>
-                </div>
-
-                <div class="col-sm-3" style="text-align: center;" data-aos="fade-up" data-aos-delay="100">
-                    <div class="plate_card">
-                    	<img class="plate_img" src="plat.png">
-                    	<h3>Healthy</h3>
-                    	<p class="plat_par">Lorem Ipsum is is simply dummy text of the printing</p>
-                    	<h3 class="plat_pric"><span>50</span> L.E</h3>
-                    </div>
-                </div>
-
-                <div class="col-sm-3" style="text-align: center;" data-aos="fade-up" data-aos-delay="150">
-                    <div class="plate_card">
-                    	<img class="plate_img" src="plat.png">
-                    	<h3>Healthy</h3>
-                    	<p class="plat_par">Lorem Ipsum is is simply dummy text of the printing</p>
-                    	<h3 class="plat_pric"><span>50</span> L.E</h3>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -232,24 +217,24 @@
     <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container">
             <div class="row mt-5">
-                <div class="col-sm-4 offset-4">
+                <div class="col-md-4 offset-4">
                     <div class="ftco-footer-widget mb-4 center">
                         <ul class="list-unstyled mb-4" style="display: -webkit-inline-box;">
                             <li style="padding: 0px 15px;">
                                 <a target="_blank" href="">
-                                    <img alt="facebook" src="facebook.png">
+                                    <img alt="facebook" src="<?php bloginfo('template_url'); ?>/facebook.png">
                                 </a>
                             </li>
 
                             <li style="padding: 0px 15px;">
                                 <a target="_blank" href="">
-                                    <img alt="linked" src="linked.png">
+                                    <img alt="linked" src="<?php bloginfo('template_url'); ?>/linked.png">
                                 </a>
                             </li>
 
                             <li style="padding: 0px 15px;">
                                 <a href="">
-                                    <img alt="instagram" src="instagram.png">
+                                    <img alt="instagram" src="<?php bloginfo('template_url'); ?>/instagram.png">
                                 </a>
                             </li>
                         </ul>
